@@ -54,5 +54,5 @@ Git tracks commits with unique SHA-1 IDs — the same across all clones for iden
 
 Real-time collaboration depends on pulling before pushing to avoid sync issues.
 
-Merge conflicts are a normal part of collaborative development, and Git provides powerful tools to resolve them.
+Merge conflicts are a normal part of collaborative development, and Git provides powerful tools to resolve them
 
