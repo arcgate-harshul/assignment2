@@ -1,0 +1,226 @@
+PROJECT REPORT – GIT ASSIGNMENT PART 2
+Prepared By – Harshul Nihalani
+
+Main task
+Stretch Task
+
+1) First, one person in the group should create a public repository using their GitHub account.
+Solution :
+Repository Created by user Arcgate-harshul
+Repository Link : https://github.com/arcgate-harshul/harshul
+2) This same person should then follow the instructions from GitHub to add a remote, and then push
+their repository. Do not forget the –u flag, as suggested by GitHub!
+Solution :
+Mkdir harshul
+cd harshul
+git remote add origin https://github.com/arcgate-harshul/harshul
+touch a.html
+nano a.html
+git add .
+Git commit – m
+git push -u origin main
+3)All of the other members of the group should then be added as collaborators, so they can commit
+to the repository also.
+Solution:
+Members added as collaborators :
+1) Harshul101
+2)Arcgate-gaurav
+4) Next, everyone else in the group should clone the repository from GitHub. Verify that the context
+of the repository is what is expected.
+Solution:
+// everyone will clone the repository in there respective terminal using
+git clone https://github.com/arcgate-harshul/harshul
+
+5) One of the group members who just cloned should now make a local commit, then push it.
+Everyone should verify that when they pull, that commit is added to their local repository (use git
+log to check for it).
+
+solution :
+
+
+
+Harshul@arcgate000:~/harshul1$ git clone "https://github.com/arcgate-harshul/harshul" Cloning into 'harshul'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 43 (delta 3), reused 32 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (43/43), 7.97 KiB | 7.97 MiB/s, done.
+Resolving deltas: 100% (3/3), done.
+Harshul@arcgate000:~/harshul1$ touch harshul.txt
+Harshul@arcgate000:~/harshulis nano harshul.txt
+Harshul@arcgate000:~/harshul1$ git rm harshul.txt harshul.py fatal: pathspec 'harshul.txt' did not match any files Harshul@arcgate000:~/harshul1$ touch harshul.py Harshul@arcgate000:~/harshulis nano harshul.py Harshul@arcgate000:~/harshul1$ git add harshul.py Harshul@arcgate000:~/harshul1$ git commit -m"harshul"
+[main 484f188] harshul
+1 file changed, 1 insertion(+)
+create mode 100644 harshul1/harshul.py
+
+The user who cloned with then create a new file add the file in staging area then commit it
+and after the commit it wil be pushed to main branch
+
+Gaurav@arcgate000:~$ git pull origin main
+remote: Enumerating objects: 34, done.
+remote: Counting objects: 100% (34/34), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 34 (delta 3), reused 23 (delta 1), pack-reused 0 (from 0) Unpacking objects: 100% (34/34), 7.05 KiB | 1.76 MiB/s, done.
+From https://github.com/arcgate-harshul/harshul
+* branch
+* [new branch]
+main main
+Gaurav@arcgate000:~$ touch kp.py
+-> FETCH_HEAD
+-> origin/main
+Gaurav@arcgate000:~$ nano kp.py Gaurav@arcgate000:~$ python3 kp.py this is the first file in this system
+
+
+
+→> Then the new user named gaurav who is the collaborator will pull and update the file
+
+
+
+6. Look at each other’s git log output. Notice how the SHA-1 is the same for a given commit across
+every copy of the repository. Why is this important?
+Solution:
+The log screen will look something like this after a set of commmits made by different users
+
+
+
+
+Harshul@arcgate000:~/harshul1$ git log
+commit 3952709d70c1c94d69c54136cebaa70be0846479 (HEAD -> main, origin/main) Author: arcgate-gaurav <gaurav.sahitya@arcgate.com>
+Date:
+Thu Jun 12 14:02:38 2025 +0530
+gaurav
+commit 484f18880327814587a44fd00961e192fd97e404 Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 13:57:38 2025 +0530
+harshul
+commit faf8533e72e902351a022eaf696e0c2e4c32048c Author: arcgate-gaurav <gaurav.sahitya@arcgate.com> Date: Thu Jun 12 13:50:53 2025 +0530
+gc
+commit 463eeedc89fba8ddff95a4f6f27e52aefaba9d7d
+Author: arcgate-gaurav <gaurav.sahitya@arcgate.com>
+Date: Thu Jun 12 13:48:53 2025 +0530
+commit by gaurav
+commit 197ac93d74b2879beef55ecb9b03c51ea09b1b12 (origin/master) Author: arcgate-gaurav <gaurav.sahitya@arcgate.com>
+Date: Thu Jun 12 13:42:53 2025 +0530
+hello
+commit 027a25de54d6f7bdbcf49eecf5501d97f7409625
+Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 12:48:10 2025 +0530
+local commit by kpp
+commit c158c9a73d2e7079a98e10972319ce3b38169129
+Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 12:41:03 2025 +0530
+final
+commit 400dd78a9a1159d997f1f1bf3c91a17e7945aeac
+Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 12:39:59 2025 +0530
+Delete a.html
+commit 47d7bc475cdd1d160b39018b47dcf7047ee60079
+Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 12:32:49 2025 +0530
+f
+commit 25e8b476f3396a9e38686eaa04b2091ce4237c7e Author: arcgate-harshul <harshul.nihalani@arcgate.com> Date: Thu Jun 12 12:16:27 2025 +0530
+
+7. Two members of the group should now make a commit locally, and race to pushit. To keep things
+simple, be sure to edit different files. What happens to the runnerup?
+1) Harshul here is trying yo push harshul.py
+
+
+Harshul@arcgate000:~/harshul1$ git push origin main Username for 'https://github.com': arcgate-harshul Password for 'https://arcgate-harshul@github.com': Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 369 bytes | 369.00 KiB/s, done.
+Total 4 (delta 1), reused ℗ (delta 0), pack-reused
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/arcgate-harshul/harshul
+3952709..9fc1a99 main -> main
+
+
+
+2) Gaurav here tried to push but due to harshul pushed it fast gaurav will get a merge error
+
+
+Gaurav@arcgate000:~/gaurav$ cd harshul Gaurav@arcgate000:~/gaurav/harshul$ ls harshul.txt kpp kp.py Gaurav@arcgate000:~/gaurav/harshul$ cd harshul1 Gaurav@arcgate000:~/gaurav/harshul/harshul1$ ls
+harshul.py
+p.py
+Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git add harshul.py Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git commit -m"l"
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git push origin main Username for 'https://github.com': harshul101 Password for 'https://harshul101@github.com': To https://github.com/arcgate-harshul/harshul ! [rejected]
+main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/arcgate-harshul/harshul' hint: Updates were rejected because the remote contains work that you do not hint: have locally. This is usually caused by another repository pushing to hint: the same ref. If you want to integrate the remote changes, use hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details. Gaurav@arcgate000:~/gaurav/harshul/harshul1$
+
+3) gaurav will accept both arguments or one of them or none of them to remove the merge confl
+
+8. The runner-up should now pull. As a group, look at the output of the command. Additionally,
+look at the git log, and not
+solution:
+then he will pull origin main to make his data up to date and then push
+
+
+
+command 'codec' from snap codec (1.0.0) command 'code' from snap code (258e40fe)
+See 'snap info <snapname>' for additional versions. Gaurav@arcgate000:~/gaurav/harshul/harshul1$ code . Gaurav@arcgate000:~/gaurav/harshul/harshul1$ cd Gaurav@arcgate000:~$ cd gaurav Gaurav@arcgate000:~/gaurav$ cd harshul Gaurav@arcgate000:~/gaurav/harshul$ code
+.
+Gaurav@arcgate000:~/gaurav/harshul$ git pull origin main
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 8 (delta 3), reused 8 (delta 3), pack-reused 0 (from 0) Unpacking objects: 100% (8/8), 609 bytes | 609.00 KiB/s, done.
+From https://github.com/arcgate-harshul/harshul
+* branch
+2668af7..11d8cba
+main main
+Updating 2668af7..11d8cba
+Fast-forward
+harshul1/harshul.py | 2 +-
+lakshman/kp.py
+| 1 +
+-> FETCH_HEAD
+-> origin/main
+2 files changed, 2 insertions(+), 1 deletion(-) create mode 100644 lakshman/kp.py Gaurav@arcgate000:~/gaurav/harshul$
+
+STRECH TASK →
+1. Now create a situation where two group members both edit the same
+line in the same file and commit it locally. Race to push.
+2. When the runner-up does a pull, they should get a merge conflict.
+3. Look as a group at the file in conflict, and resolve it.
+4. Use the add command to stage the fix, and then use commit to make the
+merge commit. Notice how this procedure is exactly the one you got used
+to when resolving conflicts in branches
+
+
+
+
+Gaurav@arcgate000:~/gaurav$ cd harshul Gaurav@arcgate000:~/gaurav/harshul$ ls harshul1 harshul.txt kpp kp.py Gaurav@arcgate000:~/gaurav/harshul$ cd harshull Gaurav@arcgate000:~/gaurav/harshul/harshul1$ ls
+harshul.py
+Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git add harshul.py Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git commit -m"l"
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+Gaurav@arcgate000:~/gaurav/harshul/harshul1$ git push origin main Username for 'https://github.com': harshul101 Password for 'https://harshul101@github.com': To https://github.com/arcgate-harshul/harshul ! [rejected]
+main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/arcgate-harshul/harshul' hint: Updates were rejected because the remote contains work that you do not hint: have locally. This is usually caused by another repository pushing to hint: the same ref. If you want to integrate the remote changes, use hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details. Gaurav@arcgate000:~/gaurav/harshul/harshul1$
+
+
+
+
+
+command 'codec' from snap codec (1.0.0)
+command 'code' from snap code (258e40fe)
+See 'snap info <snapname>' for additional versions. Gaurav@arcgate000:~/gaurav/harshul/harshul1$ code Gaurav@arcgate000:~/gaurav/harshul/harshul1$ cd
+Gaurav@arcgate000:~$ cd gaurav Gaurav@arcgate000:~/gaurav$ cd harshul Gaurav@arcgate000:~/gaurav/harshul$ code
+Gaurav@arcgate000:~/gaurav/harshul$ git pull origin main
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 8 (delta 3), reused 8 (delta 3), pack-reused 0 (from 0) Unpacking objects: 100% (8/8), 609 bytes | 609.00 KiB/s, done.
+From https://github.com/arcgate-harshul/harshul
+* branch
+2668af7..11d8cba
+main main
+Updating 2668af7..11d8cba
+Fast-forward
+harshul1/harshul.py | 2 +-
+lakshman/kp.py
+| 1 +
+-> FETCH_HEAD
+-> origin/main
+2 files changed, 2 insertions(+), 1 deletion(-) create mode 100644 lakshman/kp.py Gaurav@arcgate000:~/gaurav/harshul$
